@@ -1,13 +1,11 @@
 #!/bin/sh
 CWD=`pwd`
-TMP=/tmp
-cd $TMP
 echo "Building kdesupport-1.1.2.tar.bz2..."
-tar xyvf $CWD/kdesupport-1.1.2.tar.bz2
 cd kdesupport-1.1.2
 mkdir -p /usr/doc/kdesupport-1.1.2
-cp -a AUTHORS COPYING ChangeLog INSTALL NEWS README /usr/doc/kdesupport-1.1.2
+# Uncomment if you feel like 
+#cp -a AUTHORS COPYING ChangeLog INSTALL NEWS README /usr/doc/kdesupport-1.1.2
 chown -R root.root /usr/doc/kdesupport-1.1.2
-./configure --prefix=/opt/kde i386-slackware-linux
+./configure --prefix=/opt/kde
 make
 make install
