@@ -257,7 +257,7 @@ void DwTokenizer::PrintToken(ostream* aOut)
         type = "unknown        ";
         break;
     }
-    *aOut << type << mToken << '\n';
+    (std::ostream&)*aOut << type << mToken << '\n';
 }
 
 
