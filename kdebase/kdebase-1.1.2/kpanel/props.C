@@ -5,7 +5,7 @@
 //
 
 
-
+#include <cstdlib>
 #include "kpanel.h"
 #include <klocale.h>
 #include <qmsgbox.h>

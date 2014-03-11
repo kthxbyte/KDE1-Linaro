@@ -3,6 +3,7 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+#include <cstdlib>
 #include "kpanel.h"
 #include <qapp.h>
 #include <qmsgbox.h>

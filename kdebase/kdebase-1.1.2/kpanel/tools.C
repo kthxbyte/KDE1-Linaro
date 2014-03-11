@@ -3,6 +3,7 @@
 // Copyright (C) 1996,97 Matthias Ettrich
 //
 
+#include <cstdlib>
 #include <stdio.h>
 #include <unistd.h>
 #include <time.h>
