@@ -11,6 +11,7 @@
  * $Revision: 1.11.4.2 $
  */
 
+#include <iostream>
 #include "addressbook.h"
 #ifdef KAB_DEBUG
 #include "debug.h"
