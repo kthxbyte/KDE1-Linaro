@@ -88,7 +88,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-int XdmcpAllocARRAY8();
 int Debug( char*, ...);
 int LogError( char*, ...);
 int LogOutOfMem( char*, ...);
