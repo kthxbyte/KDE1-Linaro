@@ -674,13 +674,13 @@ HTMLFitType HTMLTextSlave::fitLine( bool startOfLine, bool firstRun,
 	    return HTMLCompleteFit;
 	    
 	// Text is followed by more text... break it before the last word.
-	splitPtr = rindex( text+1 , ' '); 
+	splitPtr = rindex( ((char*)text)+1 , ' '); 
 	if (!splitPtr)
 	    return HTMLCompleteFit;
     }
     else
     {
-        splitPtr = index( text+1, ' ');
+        splitPtr = index( ((char*)text)+1, ' ');
     }
 
     if (splitPtr)
