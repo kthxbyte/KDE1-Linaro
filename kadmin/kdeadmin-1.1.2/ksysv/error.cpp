@@ -6,6 +6,8 @@
 //
 // adapted for KSysV by Peter Putzer 1997
 
+using namespace std;
+
 #include <stdlib.h>
 #include <iostream.h>
 #include "error.h"
