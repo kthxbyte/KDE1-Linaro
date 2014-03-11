@@ -11,6 +11,8 @@
  * $Revision: 1.3 $
  */
 
+using namespace std;
+
 #include "SearchDialogMainWidget.h"
 #include <qtooltip.h>
 #include "debug.h" // includes kapp.h
