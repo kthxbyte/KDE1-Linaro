@@ -1,0 +1,13 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building kdegraphics-1.1.2.tar.bz2..."
+tar xyvf $CWD/kdegraphics-1.1.2.tar.bz2
+cd kdegraphics-1.1.2
+mkdir -p /usr/doc/kdegraphics-1.1.2
+cp -a AUTHORS COPYING ChangeLog INSTALL README /usr/doc/kdegraphics-1.1.2
+chown -R root.root /usr/doc/kdegraphics-1.1.2
+./configure --prefix=/opt/kde i386-slackware-linux
+make
+make install
