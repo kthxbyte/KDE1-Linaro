@@ -2,6 +2,7 @@
 //
 // KDE Help Viewer
 //
+using namespace std;
 
 #ifndef __HELPWIN_H__
 #define __HELPWIN_H__
