@@ -4,6 +4,7 @@
 //
 // Copyright (C) Martin R. Jones 1995
 //
+using namespace std;
 
 #include <stdlib.h>
 #include <iostream.h>
