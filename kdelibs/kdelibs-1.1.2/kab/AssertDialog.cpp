@@ -11,6 +11,8 @@
  * $Revision: 1.4 $
  */
 
+using namespace std;
+
 extern "C" {
 #include <signal.h>
 #include <string.h>

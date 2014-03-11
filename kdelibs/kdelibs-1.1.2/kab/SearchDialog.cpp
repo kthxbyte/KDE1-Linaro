@@ -10,6 +10,8 @@
  * $Revision: 1.4 $
  */
 
+using namespace std;
+
 #include "SearchDialog.h"
 #include "SearchDialogMainWidget.h"
 #include "debug.h"

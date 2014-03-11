@@ -2,6 +2,8 @@
  * §Header§
  */
 
+using namespace std;
+
 #include <qsize.h>
 #include <qbitmap.h>
 #include <qtooltip.h>

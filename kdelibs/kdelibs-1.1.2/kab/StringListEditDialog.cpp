@@ -2,6 +2,8 @@
  * §Header§
  */
 
+using namespace std;
+
 #include "StringListEditDialog.h"
 #include "StringListEditWidget.h"
 #include "debug.h"

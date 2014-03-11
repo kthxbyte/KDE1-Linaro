@@ -11,6 +11,8 @@
  * $Revision: 1.5 $
  */
 
+using namespace std;
+
 #include "PrintDialog.h"
 #include "debug.h"
 

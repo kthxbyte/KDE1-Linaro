@@ -10,6 +10,9 @@
  *             Nana for debugging
  * $Revision: 1.5 $
  */
+
+using namespace std;
+
 #include "DialogBase.h"
 #include <qpixmap.h>
 // #include <qwhatsthis.h>
