@@ -7,6 +7,9 @@
 #include "mnt.h"
 #include "quota.h"
 
+// Quick fix for Linaro build
+#define dqb_curblocks dqb_curspace
+
 #ifdef HAVE_LINUX_QUOTA_H
 #  ifndef QUOTACTL_IN_LIBC
 #    include <syscall.h>
