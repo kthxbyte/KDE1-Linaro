@@ -10,6 +10,8 @@
  * $Revision: 1.10 $
  */
 
+using namespace std;
+
 #include "StringListEditDialog.h"
 #include "editentry.h"
 #include "widgets.h"
