@@ -26,6 +26,8 @@
 #include <algorithm>
 #include <fstream.h>
 
+using namespace std;
+
 class Section
 {
 public:
