@@ -3,6 +3,7 @@
 #include <qdir.h>
 #include <qfileinfo.h>
 #include <kapp.h>
+#include <cstdlib>
 
 #include <unistd.h>
 
