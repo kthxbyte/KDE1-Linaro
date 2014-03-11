@@ -22,6 +22,7 @@
 //
 //
 
+#include <qbuffer.h>
 #include <qobject.h>
 #include <qlistbox.h>
 #include <qcombobox.h>
