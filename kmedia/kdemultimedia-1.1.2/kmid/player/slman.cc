@@ -24,6 +24,7 @@
 #include "slman.h"
 #include <stdlib.h>
 #include "../version.h"
+#include <string.h>
 
 SLManager::SLManager()
 {
@@ -69,7 +70,7 @@ SLManager::~SLManager()
     ntotal=0;
 }
 
-int SLManager::createCollection(char *name=NULL)
+int SLManager::createCollection(char *name)
 {
     SongListNode *ptr;
     if (nameUsed(name))
