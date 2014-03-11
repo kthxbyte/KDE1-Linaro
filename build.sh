@@ -2,7 +2,7 @@
 ( cd kdelibs ; sh kdelibs.build )
 ( cd kdebase ; sh kdebase.build )
 ( cd kadmin ; sh kdeadmin.build )
-#( cd kdegames ; ./kdegames.build )
+( cd kdegames ; sh kdegames.build )
 #( cd kgraphic ; ./kdegraphics.build )
 #( cd kmedia ; ./kdemultimedia.build )
 #( cd knetwork ; ./kdenetwork.build )
