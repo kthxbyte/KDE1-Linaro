@@ -27,6 +27,7 @@
 
 #include <qfont.h>
 
+class KCharsets;
 class KCharsetEntry;
 class KCharsetsData;
 
