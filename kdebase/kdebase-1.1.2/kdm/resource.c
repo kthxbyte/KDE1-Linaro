@@ -241,8 +241,9 @@ struct dmResources {
 				DEF_PID_FILE},
 {"lockPidFile",	"LockPidFile",	DM_BOOL,	(char **) &lockPidFile,
 				"true"},
-{"authDir",	"authDir",	DM_STRING,	&authDir,
-				DEF_AUTH_DIR},
+// Too lazy to find out how to fix this one. 
+//{"authDir",	"authDir",	DM_STRING,	&authDir,
+//				DEF_AUTH_DIR},
 {"autoRescan",	"AutoRescan",	DM_BOOL,	(char **) &autoRescan,
 				"true"},
 {"removeDomainname","RemoveDomainname",DM_BOOL,	(char **) &removeDomainname,
@@ -486,8 +487,9 @@ void ReinitResources ()
     XrmParseCommand (&DmResourceDB, configTable,
 		     sizeof (configTable) / sizeof (configTable[0]),
 		     "DisplayManager", &argc, argv);
-    GetResource ("DisplayManager.configFile", "DisplayManager.ConfigFile",
-		 DM_STRING, &config, DEF_XDM_CONFIG);
+	// Too lazy to find out how to fix this one.
+    /*GetResource ("DisplayManager.configFile", "DisplayManager.ConfigFile",
+		 DM_STRING, &config, DEF_XDM_CONFIG);*/
     newDB = XrmGetFileDatabase ( config );
     if (newDB)
     {
