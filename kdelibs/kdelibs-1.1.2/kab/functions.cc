@@ -11,10 +11,13 @@
  */
 
 #pragma implementation
+using namespace std;
 
+#include <string>
 #include "functions.h"
 #include "debug.h"
 #include <stdlib.h>
+
 
 string AuthorEmailAddress;
 
@@ -141,7 +144,8 @@ void tokenize(list<string>& resultat, const string& text, char tr, bool strikt)
 	} else { // last element
 	  if(!strikt && zwei>eins+1) // nur wenn dazwischen Zeichen sind
 	    {
-	      teil.assign(text, eins);
+	      string dumbhack(text, eins);
+	      teil.assign(dumbhack);
 	      CHECK(teil.size()==text.size()-eins);
 	      resultat.push_back(teil);
 	    }
