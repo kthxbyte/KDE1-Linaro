@@ -33,7 +33,7 @@
 
 #include "OptionsDlg.moc"
 
-OptionsDlg::OptionsDlg( QWidget* parent, const char* name = 0 )
+OptionsDlg::OptionsDlg( QWidget* parent, const char* name )
         : QDialog( parent, name, TRUE )
 {
     setCaption( i18n( "KDat: Options" ) );
