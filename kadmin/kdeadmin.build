@@ -1,0 +1,13 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building kdeadmin-1.1.2.tar.bz2..."
+tar xyvf $CWD/kdeadmin-1.1.2.tar.bz2
+cd kdeadmin-1.1.2
+./configure --prefix=/opt/kde i386-slackware-linux
+make
+make install
+mkdir -p /usr/doc/kdeadmin-1.1.2
+cp -a AUTHORS COPYING INSTALL README /usr/doc/kdeadmin-1.1.2
+chown -R root.root /usr/doc/kdeadmin-1.1.2
