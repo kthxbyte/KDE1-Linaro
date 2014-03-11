@@ -18,7 +18,9 @@
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    
   */
-#include <stream.h>
+using namespace std;
+
+#include <iostream>
 #include <string.h>
 #include <stdlib.h>
 
