@@ -4,6 +4,7 @@
 //
 // (C) Martin R. Jones 1996
 //
+using namespace std;
 
 #include <iostream.h>
 #include <qapp.h>

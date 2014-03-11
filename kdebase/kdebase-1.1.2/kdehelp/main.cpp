@@ -4,7 +4,9 @@
 //
 // (c) Martin R. Jones 1996
 //
+using namespace std;
 
+#include <fstream>
 #include <qfileinf.h>
 
 #include "helpwin.h"
