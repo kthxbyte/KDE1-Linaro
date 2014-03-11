@@ -1,18 +1,21 @@
 #!/bin/sh
 CWD=`pwd`
-TMP=/tmp
-cd $TMP
 echo "Building kdebase-1.1.2.tar.bz2..."
-( cd / ; tar xzvf $CWD/kcensored-1.1.2.tar.gz )
-( cd / ; tar xzvf $CWD/kdescripts.tar.gz )
-tar xyvf $CWD/kdebase-1.1.2.tar.bz2
+
+# Uncomment if you feel like
+#( tar -xzvf $CWD/kcensored-1.1.2.tar.gz )
+#( tar -xzvf $CWD/kdescripts.tar.gz )
+
 cd kdebase-1.1.2
-./configure --prefix=/opt/kde --with-shadow i386-slackware-linux
+./configure --prefix=/opt/kde --with-shadow
 make
 make install
-mkdir -p /usr/doc/kdebase-1.1.2
-cp -a AUTHORS COPYING ChangeLog INSTALL README /usr/doc/kdebase-1.1.2
-chown -R root.root /usr/doc/kdebase-1.1.2
+
+# Uncomment if you feel like
+#mkdir -p /usr/doc/kdebase-1.1.2
+#cp -a AUTHORS COPYING ChangeLog INSTALL README /usr/doc/kdebase-1.1.2
+#chown -R root.root /usr/doc/kdebase-1.1.2
+
 cat $CWD/xemacs.kdelnk > /opt/kde/share/applnk/apps/Editors/xemacs.kdelnk
 cat $CWD/xfractint.kdelnk > /opt/kde/share/applnk/apps/Graphic/xfractint.kdelnk
 cat $CWD/konsolerc > /opt/kde/share/config/konsolerc
