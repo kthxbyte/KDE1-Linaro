@@ -21,6 +21,7 @@
 // KDE HTML Widget
 //
 
+#include <qbuffer.h>
 #include <kurl.h>
 
 #include "htmlchain.h"
