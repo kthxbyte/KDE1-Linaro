@@ -49,8 +49,8 @@ enum KCookieAdvice {
 
 class KCookie 
 {
-    friend KCookieJar;
-    friend KCookieList;
+    friend class KCookieJar;
+    friend class KCookieList;
 
 protected:
     QString host;

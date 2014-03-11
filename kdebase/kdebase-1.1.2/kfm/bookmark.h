@@ -36,7 +36,7 @@ class KBookmarkManager;
 
 class KBookmark
 {
-  friend KBookmarkManager;
+  friend class KBookmarkManager;
   
 public:
   enum { URL, Folder };
@@ -94,7 +94,7 @@ protected:
 
 class KBookmarkManager : public QObject
 {
-  friend KBookmark;
+  friend class KBookmark;
   
   Q_OBJECT
 public:

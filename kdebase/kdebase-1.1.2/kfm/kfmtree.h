@@ -13,7 +13,7 @@ class KfmGui;
 
 class KFMDirTree : public KFinder
 {
-    friend KFMDirTreeItem;
+    friend class KFMDirTreeItem;
     
     Q_OBJECT
 public:

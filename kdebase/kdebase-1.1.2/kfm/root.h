@@ -180,9 +180,9 @@ protected:
 
 class KRootWidget : public QWidget
 {
-    friend KRootIcon;
-    friend KfmView;
-    friend KFMManager;
+    friend class KRootIcon;
+    friend class KfmView;
+    friend class KFMManager;
     
     Q_OBJECT
 public:

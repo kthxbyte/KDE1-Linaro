@@ -36,8 +36,8 @@ public slots:
 
 class KFinderItem : public QObject
 {
-    friend KFinderWin;
-    friend KFinderNode;
+    friend class KFinderWin;
+    friend class KFinderNode;
     
     Q_OBJECT
 public:
@@ -94,7 +94,7 @@ protected:
 
 class KFinderWin : public QTableView
 {
-    friend KFinder;
+    friend class KFinder;
     
     Q_OBJECT
 public:
@@ -136,7 +136,7 @@ class KFinder : public QWidget
 {
     Q_OBJECT
 
-    friend KFinderWin;
+    friend class KFinderWin;
 public:
     KFinder( QWidget *_parent = 0L, QStrList *_headers = 0L, QArray<int> *_sizes = 0L );
     ~KFinder();
