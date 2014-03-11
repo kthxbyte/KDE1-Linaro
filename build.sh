@@ -1,6 +1,6 @@
 ( cd ksupport ; sh kdesupport.build )
 ( cd kdelibs ; sh kdelibs.build )
-#( cd kdebase ; ./kdebase.build )
+( cd kdebase ; sh kdebase.build )
 #( cd kadmin ; ./kdeadmin.build )
 #( cd kdegames ; ./kdegames.build )
 #( cd kgraphic ; ./kdegraphics.build )
