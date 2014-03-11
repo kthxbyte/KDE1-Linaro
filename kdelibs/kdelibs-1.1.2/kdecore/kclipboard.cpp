@@ -30,13 +30,13 @@ KClipboard::KClipboard()
 {
   if ( s_pSelf )
   {
-    cerr << "You may only open one KClipboard at once" << endl;
+    std::cerr << "You may only open one KClipboard at once" << std::endl;
     assert( 0 );
   }
   
   if ( qt_clipboard != 0L )
   {    
-    cerr << "KClipboard::KClipboard There is already a clipboard registered\n" << endl;
+    std::cerr << "KClipboard::KClipboard There is already a clipboard registered\n" << std::endl;
     assert( 0 );
   }
     
@@ -61,7 +61,7 @@ bool KClipboard::open( int _mode, const char *_format )
 {
   if ( _mode != IO_ReadOnly && _mode != ( IO_WriteOnly | IO_Truncate ) && _mode != IO_WriteOnly )
   {    
-    cerr << "KClipboard: Wrong flags in call for Ken" << endl;
+    std::cerr << "KClipboard: Wrong flags in call for Ken" << std::endl;
     assert( 0 );
   }
     
@@ -163,7 +163,7 @@ void KClipboard::setOwner()
   XSetSelectionOwner( dpy, XA_PRIMARY, win, qt_x_clipboardtime );
   if ( XGetSelectionOwner( dpy, XA_PRIMARY ) != win )
   {
-    cerr <<  "KClipboard::setOwner: Cannot set X11 selection owner" << endl;
+    std::cerr <<  "KClipboard::setOwner: Cannot set X11 selection owner" << std::endl;
     return;
   }                            
 
