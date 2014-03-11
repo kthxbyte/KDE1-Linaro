@@ -11,6 +11,8 @@
  * $Revision: 1.5 $
  */
 
+using namespace std;
+
 #include <kapp.h>
 #include <qtooltip.h>
 #include "searchresults.h"
