@@ -1,0 +1,23 @@
+# KDE Config File
+[KDMDESKTOP]
+BackGroundPicture=/opt/kde/share/wallpapers/isotope_threads.jpg
+BackGroundPictureMode=Tile
+BackGroundColor1=0,0,128
+BackGroundColor2=0,255,255
+BackGroundColorMode=Plain
+[Locale]
+Language=C
+[KDM]
+SortUsers=true
+NoUsers=ftp;lp;adm;operator;gdm;bin;daemon;games;halt;mail;man;news;nobody;reboot;shutdown;sync;uucp;xten;
+GreetString=slackware linux [HOSTNAME]
+ShutdownButton=ConsoleOnly
+UserView=true
+FailFont=helvetica,12,5,iso-8859-1,75,0
+LogoPixmap=/opt/kde/share/apps/kdm/pics/s.xpm
+GreetFont=courier,24,5,iso-8859-1,75,0
+StdFont=Helvetica,12,5,iso-8859-1,50,0
+SessionTypes=kde;gnome;openwin;fvwm2;fvwm95;blackbox;windowmaker;afterstep;enlightenment;twm;failsafe;
+Restart=/sbin/reboot
+GUIStyle=Windows
+ShutDown=/sbin/halt

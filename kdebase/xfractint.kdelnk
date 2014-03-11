@@ -1,0 +1,20 @@
+# KDE Config File
+[KDE Desktop Entry]
+Comment[C]=Fractint for X
+Comment[pt]=Aplicação
+Comment[fi]=Sovellus
+SwallowExec=
+SwallowTitle=
+Comment[fr]=Application
+BinaryPattern=xfractint;
+Comment[sk]=Aplikácia
+Name[C]=Xfractint
+MimeType=
+Exec=xterm -fn 7x14 -e xfractint
+Comment[pt_BR]=Aplicação
+Icon=kfract.xpm
+TerminalOptions=
+Path=
+Type=Application
+Comment[it]=Applicazione
+Terminal=0

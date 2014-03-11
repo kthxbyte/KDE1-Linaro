@@ -1,0 +1,20 @@
+# KDE Config File
+[kvt]
+foreground=#b2b2b2
+defaultFont=courier,14,5,unknown,50,0
+charclass=
+menubar=visible
+background=#000000
+dimension=80x24
+Hotkeys=true
+keyset=0
+fontSize2=7
+fontSize3=10
+kmenubar=top
+fontSize4=14
+fontSize5=15
+colormode=KDE
+fontSize6=20
+size=normal
+scrollbar=right
+backspace=DEL

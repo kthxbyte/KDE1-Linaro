@@ -1,0 +1,29 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building kdebase-1.1.2.tar.bz2..."
+( cd / ; tar xzvf $CWD/kcensored-1.1.2.tar.gz )
+( cd / ; tar xzvf $CWD/kdescripts.tar.gz )
+tar xyvf $CWD/kdebase-1.1.2.tar.bz2
+cd kdebase-1.1.2
+./configure --prefix=/opt/kde --with-shadow i386-slackware-linux
+make
+make install
+mkdir -p /usr/doc/kdebase-1.1.2
+cp -a AUTHORS COPYING ChangeLog INSTALL README /usr/doc/kdebase-1.1.2
+chown -R root.root /usr/doc/kdebase-1.1.2
+cat $CWD/xemacs.kdelnk > /opt/kde/share/applnk/apps/Editors/xemacs.kdelnk
+cat $CWD/xfractint.kdelnk > /opt/kde/share/applnk/apps/Graphic/xfractint.kdelnk
+cat $CWD/konsolerc > /opt/kde/share/config/konsolerc
+cat $CWD/kvtrc > /opt/kde/share/config/kvtrc
+cp -a /opt/kde/share/config/kdmrc /opt/kde/share/config/kdmrc.orig
+cat $CWD/kdmrc > /opt/kde/share/config/kdmrc
+cat $CWD/kpanelrc > /opt/kde/share/config/kpanelrc
+cat $CWD/konsole.kdelnk > /opt/kde/share/applnk/Utilities/konsole.kdelnk
+cat $CWD/kvt.kdelnk > /opt/kde/share/applnk/Utilities/kvt.kdelnk
+cat $CWD/Graphic.directory > /opt/kde/share/applnk/apps/Graphic/.directory
+cat $CWD/s.xpm > /opt/kde/share/apps/kdm/pics/s.xpm
+cat $CWD/s12.xpm > /opt/kde/share/apps/kdm/pics/s12.xpm
+echo
+echo "Don't forget to use the included doinst.sh."

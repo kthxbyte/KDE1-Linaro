@@ -1,0 +1,13 @@
+# KDE Config File
+[options]
+schema=/opt/kde/share/apps/konsole/Linux.schema
+font=6
+defaultwidth=662
+BS hack=true
+defaultheight=406
+menubar visible=true
+kmenubar=top
+has frame=true
+scrollbar=2
+konsolearguments=/bin/bash,
+class=konsole
