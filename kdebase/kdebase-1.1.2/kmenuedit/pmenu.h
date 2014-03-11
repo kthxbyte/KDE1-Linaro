@@ -40,8 +40,8 @@ enum EntryType { empty, separator, submenu, unix_com, swallow_com, url, device, 
 class PMenuItem : public QObject
 {
   Q_OBJECT
-  friend QString &operator<<(QString &, PMenuItem &);
-  friend PMenu;
+  friend class QString &operator<<(QString &, PMenuItem &);
+  friend class PMenu;
 public:
   PMenuItem();
   PMenuItem( EntryType e, QString t=0, QString c=0, QString n=0, PMenu *menu=0,
