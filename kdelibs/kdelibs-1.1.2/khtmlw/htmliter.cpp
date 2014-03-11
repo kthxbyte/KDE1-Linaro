@@ -17,6 +17,7 @@
     Boston, MA 02111-1307, USA.
 */
 
+#include <qbuffer.h>
 #include "htmlobj.h"
 #include "htmlclue.h"
 #include "htmltable.h"
