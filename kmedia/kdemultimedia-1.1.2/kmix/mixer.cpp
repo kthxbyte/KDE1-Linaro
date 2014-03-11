@@ -20,7 +20,9 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
                                                                             
-#include "iostream.h"
+using namespace std;
+
+#include <iostream>
 #include <unistd.h>
 #include <string.h>
 
