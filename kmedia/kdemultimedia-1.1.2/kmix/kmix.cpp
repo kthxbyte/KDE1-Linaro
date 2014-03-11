@@ -21,11 +21,13 @@
  */
 
 // Thanks for taking a look in here. :-)
+using namespace std;
+
 static char rcsid[]="$Id: kmix.cpp,v 1.44.2.2 1999/07/18 20:53:29 esken Exp $";
 
 #include <stdio.h>
 #include <unistd.h>
-#include <iostream.h>
+#include <iostream>
 #include <kapp.h>
 #include <kiconloader.h>
 #include <klocale.h>
