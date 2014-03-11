@@ -2,6 +2,8 @@
  * §Header§
  */
 
+using namespace std;
+
 #include "StringListSelectSetDialog.h"
 #include <qlistbox.h>
 #include <kapp.h>

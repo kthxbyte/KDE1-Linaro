@@ -2,6 +2,8 @@
  * §Header§
  */
 
+using namespace std;
+
 #include "StringListSelectAndReorderSet.h"
 #include <qbitmap.h>
 // the bitmaps
