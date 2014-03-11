@@ -53,7 +53,7 @@ protected:
 
 class EntryDialog : public QDialog
 {
-  friend MenuButton;
+  friend class MenuButton;
   Q_OBJECT
 public:
   EntryDialog(QWidget* parent = NULL, const char* name = NULL );
