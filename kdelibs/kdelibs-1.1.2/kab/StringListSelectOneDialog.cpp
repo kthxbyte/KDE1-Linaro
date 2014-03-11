@@ -2,6 +2,8 @@
  * §Header§
  */
 
+using namespace std;
+
 #include "StringListSelectOneDialog.h"
 #include <qcombobox.h>
 #include <qlayout.h>
