@@ -35,11 +35,13 @@
 #include <getopt.h>
 #endif
 #include <limits.h>
-#include <iostream.h>
+#include <iostream>
 #include "midispec.h"
 #include "sndcard.h"
 #include "songlist.h"
 #include "../version.h"
+
+using namespace std;
 
 /*
  These are the default values for some options, edit them if you want:
