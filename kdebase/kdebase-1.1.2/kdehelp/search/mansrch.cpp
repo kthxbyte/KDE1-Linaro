@@ -3,6 +3,8 @@
 #include <config.h>
 #endif
 
+using namespace std;
+
 #include <iostream.h>
 #include <stdio.h>
 #include <string.h>

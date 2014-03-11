@@ -1,11 +1,13 @@
-//----------------------------------------------------------------------------
-// Very simple documentation search
-//
+//---------------------------------------------------------------------------- 
+// Very simple documentation search //
+
+using namespace std;
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
+#include <fstream>
 #include <stdlib.h>
 #include <qstring.h>
 #include <kapp.h>
