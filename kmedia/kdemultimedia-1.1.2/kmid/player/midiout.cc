@@ -21,6 +21,7 @@
     or to Antonio Larrosa, Rio Arnoya, 10 5B, 29006 Malaga, Spain
 
 ***************************************************************************/
+#include <stdlib.h>
 #include "midiout.h"
 #include <unistd.h>
 #include <fcntl.h>
