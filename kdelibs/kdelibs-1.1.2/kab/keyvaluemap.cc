@@ -9,6 +9,7 @@
  */
 
 #pragma implementation
+using namespace std;
 
 #include "keyvaluemap.h"
 #include "debug.h"
@@ -16,8 +17,11 @@
 #include <iostream.h>
 extern "C" {
 #include <stdio.h>
+#include <string.h>
 	   }
 #include <fstream.h>
+#include <cstdlib>
+
 
 class StringStringMap 
   : public map<string, string, less<string> >
@@ -131,7 +135,7 @@ KeyValueMap::save(const string& filename, bool force)
     {
       file.open(filename.c_str());
     } else {
-      file.open(filename.c_str(), ios::nocreate);
+	file.open(filename.c_str());
     }
   if(!file.good())
     {
@@ -449,8 +453,6 @@ KeyValueMap::insertLine(string line, bool force, bool relax, bool encode)
   register bool GUARD; GUARD=true;
   // ############################################################################
   string::size_type index;
-  string key;
-  string value;
   // ----- is the line empty or does it contain only 
   //       whitespaces?
   index=line.find_first_not_of(" \t");
@@ -467,8 +469,8 @@ KeyValueMap::insertLine(string line, bool force, bool relax, bool encode)
       return false;
     }
   // -----
-  key.assign(line, 0, index); // copy from start to '='
-  value.assign(line, index+1); // copy the rest
+  string key(line, 0, index); // copy from start to '='
+  string value(line, index+1); // copy the rest
   // keys should not contain whitespaces 
   // to avoid unpredictable results
   for(;;)
