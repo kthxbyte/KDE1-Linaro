@@ -18,9 +18,12 @@
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    
   */
+
+using namespace std;
+
 #include <time.h>
 #include <unistd.h>
-#include <stream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <signal.h>
 #include <stdlib.h>
