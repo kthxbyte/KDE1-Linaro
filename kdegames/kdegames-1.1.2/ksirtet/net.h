@@ -58,9 +58,9 @@ class ServerNetObject;
 
 class Player
 {
- friend NetObject;
- friend ClientNetObject;
- friend ServerNetObject;
+ friend class NetObject;
+ friend class ClientNetObject;
+ friend class ServerNetObject;
 	
  protected:
 	Player( NetObject *parent );
@@ -76,7 +76,7 @@ class Player
 
 class NetObject
 {
- friend Player;
+ friend class Player;
 	
  public:
 	NetObject( const char *address = 0,
