@@ -1,0 +1,14 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building kdelibs-1.1.2.tar.bz2..."
+tar xyvf $CWD/kdelibs-1.1.2.tar.bz2
+cd kdelibs-1.1.2
+mkdir -p /usr/doc/kdelibs-1.1.2
+cp -a AUTHORS COPYING COPYING.LIB ChangeLog INSTALL NEWS README \
+  /usr/doc/kdelibs-1.1.2
+chown -R root.root /usr/doc/kdelibs-1.1.2
+./configure --prefix=/opt/kde i386-slackware-linux
+make
+make install
