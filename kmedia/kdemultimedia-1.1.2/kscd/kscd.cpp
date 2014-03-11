@@ -23,6 +23,7 @@
 
 extern "C" {
 #include "struct.h"
+#include <time.h>
 }
 
 #include <qdir.h>
@@ -923,7 +924,7 @@ void KSCD::ejectClicked(){
 
         stop_cd();
         //  timer->stop();
-        eject_cd(1);
+        eject_cd();
     }else{
         cd_close();
         cd_status();
