@@ -62,9 +62,9 @@ enum EntryType { empty, separator, submenu, unix_com, prog_com, label, add_but, 
 class PMenuItem : public QObject
 {
   Q_OBJECT
-  friend QString &operator<<(QString &, PMenuItem &);
-  friend PMenu;
-  friend PFileMenu;
+  friend class QString &operator<<(QString &, PMenuItem &);
+  friend class PMenu;
+  friend class PFileMenu;
 public:
 
 #ifdef DISKNAV_DEBUG
@@ -217,8 +217,8 @@ class PFileMenu : public PMenu
 {
   Q_OBJECT
 public:
-  friend PMenu;
-  friend PMenuItem;
+  friend class PMenu;
+  friend class PMenuItem;
 
 #ifdef DISKNAV_DEBUG
   virtual void dump();
