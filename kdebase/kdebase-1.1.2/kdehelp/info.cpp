@@ -610,7 +610,7 @@ void cNodeLineList::AddMenu(const char *buffer)
 	char *ptr1, *ptr2;
 	cNodeMenu *nodeMenu = new cNodeMenu;
 
-	ptr1 = strstr(buffer, "::");
+	ptr1 = strstr((char*) buffer, "::");
 
 	if ( ptr1 && (*(ptr1+2) == ' ' || *(ptr1+2) == '\t' || *(ptr1+2) == '\0') )
 	{
@@ -619,7 +619,7 @@ void cNodeLineList::AddMenu(const char *buffer)
 		nodeMenu->node = StrDup(buffer);
 		ptr1 += 2;
 	}
-	else if ( (ptr1 = strchr(buffer, ':')) )
+	else if ( (ptr1 = strchr((char*) buffer, ':')) )
 	{
 		char *nodePtr;
 		*ptr1 = '\0';
