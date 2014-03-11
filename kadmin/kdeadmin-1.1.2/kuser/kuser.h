@@ -98,7 +98,7 @@ public:
   void setCopySkel(int data);
 
 protected:
-  friend KUsers;
+  friend class KUsers;
 
   void createHome();
   int createMailBox();
