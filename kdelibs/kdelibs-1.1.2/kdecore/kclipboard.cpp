@@ -73,7 +73,7 @@ bool KClipboard::open( int _mode, const char *_format )
     m_bEmpty = false;
     m_strFormat = _format;
 
-    cerr << "Fuck ya too" << endl;
+    std::cerr << "Fuck ya too" << std::endl;
 
     QBuffer::open( _mode );
     if ( strcmp( _format, "application/octet-stream" ) != 0L && 
@@ -85,7 +85,7 @@ bool KClipboard::open( int _mode, const char *_format )
     else
       m_mimeTypeLen = 0;
     
-    cerr << "2 Fuck ya too" << endl;
+    std::cerr << "2 Fuck ya too" << std::endl;
 
     return true;
   }
