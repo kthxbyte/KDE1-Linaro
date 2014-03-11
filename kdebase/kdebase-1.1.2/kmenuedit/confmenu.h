@@ -117,7 +117,7 @@ class ConfigureMenu;
 class ConfMenuItem : public QObject
 {
   Q_OBJECT
-  friend ConfigureMenu;
+  friend class ConfigureMenu;
 public:
   ConfMenuItem (MenuButton *but, PMenuItem *item);
   ~ConfMenuItem () { if(button) delete button; }
