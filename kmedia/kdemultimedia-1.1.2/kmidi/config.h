@@ -345,10 +345,10 @@ typedef char int8;
 /* You could specify a complete path, e.g. "/etc/timidity.cfg", and
    then specify the library directory in the configuration file. */
 #ifdef ADAGIO
-#define CONFIG_FILE	TIMID_DIR##"/timidity.cfg"
+#define CONFIG_FILE	TIMID_DIR"/timidity.cfg"
 #else
 #ifndef CONFIG_FILE
-#define CONFIG_FILE DEFAULT_PATH##"/timidity.cfg"
+#define CONFIG_FILE DEFAULT_PATH"/timidity.cfg"
 #endif
 #endif
 
