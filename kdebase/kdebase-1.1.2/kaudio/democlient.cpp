@@ -7,6 +7,8 @@
  * Questions, comments? Mail to esken@kde.org
  */
 
+using namespace std;
+
 #include <stdio.h>
 #include <iostream.h>
 #include <stdlib.h>

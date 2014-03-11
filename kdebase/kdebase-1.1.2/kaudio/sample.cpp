@@ -1,3 +1,5 @@
+using namespace std;
+
 #include <stdio.h>
 #include <iostream.h>
 #include <sys/stat.h>

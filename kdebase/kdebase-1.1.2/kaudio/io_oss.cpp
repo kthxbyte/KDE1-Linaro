@@ -1,3 +1,5 @@
+using namespace std;
+
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>

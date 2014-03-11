@@ -1,3 +1,4 @@
+using namespace std;
 
 #include <unistd.h>
 #include <stdlib.h>
