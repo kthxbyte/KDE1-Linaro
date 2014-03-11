@@ -18,6 +18,7 @@
 
 ****************************************/
 
+#include <cstdlib>
 #include <qapp.h>
 #include <qpainter.h>
 #include <qcolor.h>
