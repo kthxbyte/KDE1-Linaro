@@ -71,7 +71,7 @@
 #include "version.h"
 #include "KSPrefs/ksprefs.h"
 #include "kpopupmenu.h"
-#include <iostream.h>
+#include <iostream>
 
 #include "objFinder.h"
 

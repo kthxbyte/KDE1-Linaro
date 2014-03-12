@@ -67,7 +67,7 @@
 
 #include "iocontroller.h"
 #include "toplevel.h"
-#include <iostream.h>
+#include <iostream>
 #include "ksircprocess.h"
 #include "control_message.h"
 #include "config.h"

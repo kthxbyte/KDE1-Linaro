@@ -11,7 +11,7 @@
 
 #include "ioDCC.h"
 #include <qregexp.h> 
-#include <iostream.h>
+#include <iostream>
 
 KSircIODCC::~KSircIODCC()
 {

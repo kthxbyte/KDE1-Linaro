@@ -107,7 +107,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <iostream.h>
+#include <iostream>
 
 extern KApplication *kApp;
 extern KConfig *kConfig;

@@ -8,7 +8,7 @@
  
 
 #include "ioNotify.h"
-#include <iostream.h>
+#include <iostream>
 
 KSircIONotify::KSircIONotify(KSircProcess *_proc)
   : QObject(),

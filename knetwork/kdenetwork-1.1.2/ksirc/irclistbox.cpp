@@ -1,5 +1,5 @@
 #include "irclistbox.h"
-#include <iostream.h>
+#include <iostream>
 
 #include <qevent.h>
 #include <qregexp.h>

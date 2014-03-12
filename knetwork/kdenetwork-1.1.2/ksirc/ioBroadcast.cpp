@@ -21,7 +21,7 @@
  
 
 #include "ioBroadcast.h"
-#include <iostream.h>
+#include <iostream>
 
 KSircIOBroadcast::~KSircIOBroadcast()
 {

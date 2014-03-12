@@ -3,7 +3,7 @@
 #include "alistbox.h"
 #include "control_message.h"
 #include <qmsgbox.h>
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <ssfeprompt.h>
 #include <string.h>

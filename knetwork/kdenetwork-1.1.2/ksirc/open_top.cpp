@@ -8,7 +8,7 @@
  *********************************************************************/
 
 #include "open_top.h"
-#include <iostream.h>
+#include <iostream>
 
 
 #define Inherited open_topData

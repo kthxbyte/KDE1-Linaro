@@ -3,7 +3,7 @@
 #include <qwidcoll.h>
 #include <stdlib.h>
 #include <time.h>
-#include <iostream.h>
+#include <iostream>
 
 
 QDict<QObject> *objFinder::objList = new("QDict<QObject>") QDict<QObject>;

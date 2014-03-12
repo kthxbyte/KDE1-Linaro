@@ -1,5 +1,5 @@
 #include "kspainter.h"
-#include <stdlib.h>
+#include <stdlib>
 #include <iostream.h>
 
 #include <qregexp.h>

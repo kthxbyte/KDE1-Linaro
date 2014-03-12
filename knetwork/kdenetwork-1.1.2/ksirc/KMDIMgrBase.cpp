@@ -24,7 +24,7 @@
 #include <qdrawutil.h>
 #include <kiconloader.h>
 
-#include <iostream.h>
+#include <iostream>
 #include <qpainter.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>

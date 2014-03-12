@@ -42,7 +42,7 @@
 #include "estring.h"
 #include "displayMgr.h"
 
-#include <iostream.h>
+#include <iostream>
 #include <termios.h>
 #include <unistd.h>
 #include <string.h>

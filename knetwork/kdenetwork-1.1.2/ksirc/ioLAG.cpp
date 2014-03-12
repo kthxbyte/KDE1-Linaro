@@ -9,7 +9,7 @@
 
 #include "ioLAG.h"
 #include "control_message.h"
-#include <iostream.h>
+#include <iostream>
 
 KSircIOLAG::KSircIOLAG(KSircProcess *_proc)
   : QObject(),

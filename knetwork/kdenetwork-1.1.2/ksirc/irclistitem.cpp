@@ -1,5 +1,5 @@
 #include "irclistitem.h"
-#include "iostream.h"
+#include <iostream>
 
 #include <stdlib.h>
 

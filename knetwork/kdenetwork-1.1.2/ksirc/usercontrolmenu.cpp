@@ -1,7 +1,7 @@
 #include "usercontrolmenu.h"
 
 #include <qregexp.h>
-#include <iostream.h>
+#include <iostream>
 
 extern KConfig *kConfig;
 

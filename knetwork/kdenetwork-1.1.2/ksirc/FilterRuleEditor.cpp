@@ -12,7 +12,7 @@
 #include <kconfig.h>
 #include <qmsgbox.h> 
 #include <qregexp.h>
-#include <iostream.h>
+#include <iostream>
 
 #define Inherited FilterRuleEditorData
 

@@ -22,7 +22,7 @@
 #include "servercontroller.h"
 #include "welcomeWin.h"
 
-#include <iostream.h>
+#include <iostream>
 #include <time.h>
 #include <unistd.h>
 

@@ -43,7 +43,7 @@
 #include "ahistlineedit.h"
 #include "KSColourPicker/kscolourpicker.h"
 #include "config.h"
-#include <iostream.h>
+#include <iostream>
 
 extern global_config *kSircConfig;
 
