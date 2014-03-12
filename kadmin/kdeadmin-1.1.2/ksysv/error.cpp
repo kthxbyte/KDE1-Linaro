@@ -9,7 +9,7 @@
 using namespace std;
 
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include "error.h"
 
 cError Error;
