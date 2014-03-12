@@ -18,7 +18,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <unistd.h>
 #include <string.h>
 #ifdef HAVE_CONFIG_H

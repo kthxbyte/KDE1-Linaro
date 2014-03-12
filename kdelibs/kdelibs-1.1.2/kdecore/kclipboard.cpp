@@ -8,7 +8,7 @@
 #include <X11/Xatom.h>  
 
 #include <assert.h>
-#include <iostream.h>
+#include <iostream>
 #include <ctype.h>
 #include <string.h>
 
