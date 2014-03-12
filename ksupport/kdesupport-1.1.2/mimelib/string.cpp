@@ -29,7 +29,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-#include <new.h>
+#include <new>
 #include <mimelib/string.h>
 
 #define DW_MIN(a,b) ((a) <= (b) ? (a) : (b))
