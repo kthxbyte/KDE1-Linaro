@@ -1,3 +1,5 @@
+using namespace std;
+
 #include"Trace.h"
 
 int Trace::traceIndent = 0;
