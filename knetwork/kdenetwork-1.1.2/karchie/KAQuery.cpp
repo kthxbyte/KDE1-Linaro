@@ -83,10 +83,6 @@ extern "C" {
     */
 
     /* extern variables defined for archiequery */
-    int pwarn;
-    char p_warn_string[P_ERR_STRING_SZ];
-    int perrno;
-    char p_err_string[P_ERR_STRING_SZ];
     int pfs_debug;
     int verbose; /* verbose level: 1 verbose, 0 non-verbose */
 
