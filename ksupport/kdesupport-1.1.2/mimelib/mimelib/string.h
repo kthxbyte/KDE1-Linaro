@@ -27,7 +27,7 @@
 
 #include <assert.h>
 #include <stddef.h>
-#include <iostream.h>
+#include <iostream>
 
 #ifndef DW_CONFIG_H
 #include <mimelib/config.h>
