@@ -6,7 +6,7 @@
 //
 using namespace std;
 
-#include <iostream.h>
+#include <iostream>
 #include <qapp.h>
 #include <qaccel.h>
 #include <qlabel.h>

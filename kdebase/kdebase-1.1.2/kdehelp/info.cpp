@@ -16,7 +16,7 @@ using namespace std;
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <iostream.h>
+#include <iostream>
 #include <fstream.h>
 #include <unistd.h>
 #include <ctype.h>

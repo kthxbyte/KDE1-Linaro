@@ -3,7 +3,7 @@ using namespace std;
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <fcntl.h>
 #include <config.h>

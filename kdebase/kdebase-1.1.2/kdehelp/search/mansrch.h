@@ -2,7 +2,7 @@
 #ifndef __MANSRCH_H__
 #define __MANSRCH_H__
 
-#include "iostream.h"
+#include <iostream>
 
 bool searchMan( const char *search, ostream &stream );
 

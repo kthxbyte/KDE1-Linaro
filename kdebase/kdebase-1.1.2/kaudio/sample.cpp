@@ -1,7 +1,7 @@
 using namespace std;
 
 #include <stdio.h>
-#include <iostream.h>
+#include <iostream>
 #include <sys/stat.h>
 #include "sample.h"
 #include "maudio.h"
