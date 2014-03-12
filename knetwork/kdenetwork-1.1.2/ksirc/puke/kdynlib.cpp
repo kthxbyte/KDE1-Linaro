@@ -21,7 +21,7 @@
 
 // $Id: kdynlib.cpp,v 1.6 1998/12/15 04:59:01 asj Exp $
 
-#include <iostream.h>
+#include <iostream>
 
 #ifdef HAVE_CONFIG_H
 #include "../../config.h"

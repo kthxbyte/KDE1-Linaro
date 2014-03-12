@@ -20,7 +20,7 @@
 #include <qkeycode.h>
 
 // #include <qapplication.h>
-#include <iostream.h>
+#include <iostream>
 #include <kapp.h>
 
 QList<Server> Groups;

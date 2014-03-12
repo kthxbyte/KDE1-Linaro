@@ -12,7 +12,7 @@
 
 #include "KSCutDialog.h"
 #include <qevent.h>
-#include <iostream.h>
+#include <iostream>
 
 #define Inherited KSCutDialogData
 

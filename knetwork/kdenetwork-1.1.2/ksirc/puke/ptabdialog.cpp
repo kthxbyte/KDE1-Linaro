@@ -2,7 +2,7 @@
 
 #include "ptabdialog.h"
 #include "commands.h"
-#include <iostream.h>
+#include <iostream>
 
 PObject *createWidget(CreateArgs &ca)
 {
