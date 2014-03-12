@@ -14,12 +14,12 @@ using namespace std;
 #include "keyvaluemap.h"
 #include "debug.h"
 #include "functions.h"
-#include <iostream.h>
+#include <iostream>
 extern "C" {
 #include <stdio.h>
 #include <string.h>
 	   }
-#include <fstream.h>
+#include <fstream>
 #include <cstdlib>
 
 
