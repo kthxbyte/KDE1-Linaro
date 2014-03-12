@@ -24,7 +24,7 @@
 
 #include <stdlib.h>
 #include <time.h>
-#include <iostream.h>
+#include <iostream>
 #include <fstream.h>
 #include "basicmsg.h"
 

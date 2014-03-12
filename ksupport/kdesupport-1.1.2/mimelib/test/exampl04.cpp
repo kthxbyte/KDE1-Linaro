@@ -23,7 +23,7 @@
 //=============================================================================
 
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <fstream.h>
 #include "multipar.h"
 
