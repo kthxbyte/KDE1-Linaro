@@ -9,7 +9,7 @@
 #define __INFO_H__
 
 #include <stdlib.h>
-#include <fstream.h>
+#include <fstream>
 #include "fmtbase.h"
 #include "dbnew.h"
 

@@ -17,7 +17,7 @@ using namespace std;
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
-#include <fstream.h>
+#include <fstream>
 #include <unistd.h>
 #include <ctype.h>
 #include "misc.h"
