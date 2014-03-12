@@ -26,6 +26,7 @@
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.             *
  *                                                                         *
  ***************************************************************************/
+using namespace std;
 
 #include <qfiledlg.h>
 
@@ -50,10 +51,18 @@
 #include <qdstream.h> 
 
 #include <fstream>
-using namespace std;
 
 #define KFM_WINDOW "kfmclient"
 #define KFM_OPEN_URL "openURL"
+
+int	perrno;
+char	p_err_string[P_ERR_STRING_SZ];
+char	*p_err_text[P_ERR_STRING_SZ];
+
+int	pwarn;
+char	p_warn_string[P_ERR_STRING_SZ];
+char	*p_warn_text[P_ERR_STRING_SZ];
+
 
 TmpOpenFile::~TmpOpenFile()
 {
