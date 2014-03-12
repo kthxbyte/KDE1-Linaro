@@ -53,7 +53,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <fstream.h>
+#include <fstream>
 
 #ifdef ALL_PROCESSES_AND_PROC_FIND_USER
 #include <dirent.h>
