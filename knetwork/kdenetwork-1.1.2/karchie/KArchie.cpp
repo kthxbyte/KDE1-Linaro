@@ -50,6 +50,7 @@
 #include <qdstream.h> 
 
 #include <fstream>
+using namespace std;
 
 #define KFM_WINDOW "kfmclient"
 #define KFM_OPEN_URL "openURL"
