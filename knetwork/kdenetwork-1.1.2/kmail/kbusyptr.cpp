@@ -142,7 +142,8 @@ void KBusyPtr :: loadCursor (const char* cursorName,const char* maskName)
 
   if (bitmapList) delete[] bitmapList;
   QSize size(16,16);
-  bitmapList = new QBitmap[numCursors](size);
+  // ISO C++ forbids initialization in array new
+  bitmapList = new QBitmap[numCursors];//(size);
   if (cursorList) delete[] cursorList;
   cursorList = new QCursor[numCursors];
 

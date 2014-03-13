@@ -278,7 +278,7 @@ bool KMAcctPop::doProcessNewMail(KMIOStatus *wid)
       if(client.Dele(id) != '+')
 	return popError("DELE",client);
       else 
-	cout << client.SingleLineResponse().c_str();
+	std::cout << client.SingleLineResponse().c_str();
     }
 
     gotMsgs = TRUE;
