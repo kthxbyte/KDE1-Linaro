@@ -75,6 +75,7 @@
 #include "knu.moc"
 
 #include "version.h"
+#include <string>
 
 #define FRAME_BORDER_WIDTH 6
 
@@ -462,12 +463,9 @@ TopLevel::slotSelectAll()
 void 
 TopLevel::slotAbout()
 {
-  QString about;
-  about.sprintf(i18n("Knu\nVersion %s\n\nBertrand
-  Leconte\n<B.Leconte@mail.dotcom.fr>\n"), KNU_VERSION);
-
-  QMessageBox::about( this, i18n("About..."),
-		      about);
+  std::string str = i18n("Knu\nVersion %s\n\nBertrand Leconte\n<B.Leconte@mail.dotcom.fr>\n");
+  str.append(KNU_VERSION);
+  QMessageBox::about( this, i18n("About"), str.c_str());
 }
 
 
