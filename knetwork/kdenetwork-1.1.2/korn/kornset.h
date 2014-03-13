@@ -42,7 +42,7 @@ private:
 	/** 
 	  * Check if --nomouse is set.
 	 */
-	static bool KornSettings::checkNoMouse();
+	static bool checkNoMouse();
 
 public:
 
