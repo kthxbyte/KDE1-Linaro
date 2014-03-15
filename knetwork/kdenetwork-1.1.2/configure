@@ -4499,6 +4499,8 @@ Til then we will disable krn from compiling.
   DO_NOT_COMPILE="$DO_NOT_COMPILE krn"
 fi
 
+# Disabling krn until getting it to build
+DO_NOT_COMPILE="$DO_NOT_COMPILE krn"
 
 ac_cpp_safe=$ac_cpp
 ac_cpp='$CXXCPP $CPPFLAGS $all_includes'
