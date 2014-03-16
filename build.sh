@@ -7,5 +7,5 @@
 ( cd kmedia ; sh kdemultimedia.build )
 ( cd knetwork ; sh kdenetwork.build )
 #( cd kdetoys ; ./kdetoys.build )
-#( cd kdeutils ; ./kdeutils.build )
+( cd kdeutils ; sh kdeutils.build )
 #( cd korganiz ; ./korganizer.build )
