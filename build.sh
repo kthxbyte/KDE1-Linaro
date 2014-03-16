@@ -6,6 +6,6 @@
 ( cd kgraphic ; sh kdegraphics.build )
 ( cd kmedia ; sh kdemultimedia.build )
 ( cd knetwork ; sh kdenetwork.build )
-#( cd kdetoys ; ./kdetoys.build )
+( cd kdetoys ; sh kdetoys.build )
 ( cd kdeutils ; sh kdeutils.build )
 #( cd korganiz ; ./korganizer.build )
