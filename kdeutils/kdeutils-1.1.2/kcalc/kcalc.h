@@ -205,9 +205,9 @@ public:
 
     QtCalculator( QWidget *parent=0, const char *name=0 );
 
-    void QtCalculator::keyPressEvent( QKeyEvent *e );    
-    void QtCalculator::keyReleaseEvent( QKeyEvent *e );
-    void  closeEvent( QCloseEvent *e );
+    void keyPressEvent( QKeyEvent *e );    
+    void keyReleaseEvent( QKeyEvent *e );
+    void closeEvent( QCloseEvent *e );
     void writeSettings();
     void readSettings();
     void set_precision();
