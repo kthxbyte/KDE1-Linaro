@@ -18,7 +18,7 @@ private:
 
   KGlobalAccel *accel;
 
-  inline bool MyKApplication::x11EventFilter( XEvent *e )
+  inline bool x11EventFilter( XEvent *e )
   {
     if ( accel )
       {
