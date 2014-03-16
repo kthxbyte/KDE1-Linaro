@@ -8,4 +8,4 @@
 ( cd knetwork ; sh kdenetwork.build )
 ( cd kdetoys ; sh kdetoys.build )
 ( cd kdeutils ; sh kdeutils.build )
-#( cd korganiz ; ./korganizer.build )
+( cd korganiz ; sh korganizer.build )
