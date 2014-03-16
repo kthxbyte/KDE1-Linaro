@@ -1,0 +1,14 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building korganizer-1.1.2.tar.bz2..."
+tar xyvf $CWD/korganizer-1.1.2.tar.bz2
+cd korganizer-1.1.2
+mkdir -p /usr/doc/korganizer-1.1.2
+cp -a AUTHORS BUGS COPYING ChangeLog INSTALL NEWS README TODO \
+  /usr/doc/korganizer-1.1.2
+chown -R root.root /usr/doc/korganizer-1.1.2
+./configure --prefix=/opt/kde i386-slackware-linux
+make
+make install
