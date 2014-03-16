@@ -81,8 +81,8 @@ class KWrite;
 
 class KWriteView : public QWidget {
     Q_OBJECT
-    friend KWriteDoc;
-    friend KWrite;
+    friend class KWriteDoc;
+    friend class KWrite;
   public:
     KWriteView(KWrite *, KWriteDoc *);
     ~KWriteView();
@@ -175,8 +175,8 @@ class KWBookmark {
 
 class KWrite : public QWidget {
     Q_OBJECT
-    friend KWriteView;
-    friend KWriteDoc;
+    friend class KWriteView;
+    friend class KWriteDoc;
   public:
     /** The document can be used by more than one KWrite objects
     */

@@ -117,9 +117,9 @@ class KWActionGroup {
 
 class KWriteDoc : QObject {
     Q_OBJECT
-    friend KWriteView;
-    friend KWrite;
-    friend HlManager;
+    friend class KWriteView;
+    friend class KWrite;
+    friend class HlManager;
     
   public:
     KWriteDoc(HlManager *);
@@ -158,6 +158,8 @@ class KWriteDoc : QObject {
 
   public:
     int getHighlight() {return hlManager->findHl(highlight);}
+    bool hasFileName();
+    const char* fileName();
   protected:
     void setHighlight(int n);
     void makeAttribs();
@@ -200,8 +202,6 @@ class KWriteDoc : QObject {
     bool isLastView(int numViews);
 
     void setFileName(const char *);
-    bool hasFileName();
-    const char *fileName();
 
     bool doSearch(SConfig &s, const char *searchFor);
     void unmarkFound();

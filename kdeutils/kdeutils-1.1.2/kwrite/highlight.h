@@ -261,7 +261,7 @@ class HlManager;
 class KConfig;
 
 class Highlight {
-    friend HlManager;
+    friend class HlManager;
   public:
     Highlight(const char *name);
     virtual ~Highlight();
@@ -280,12 +280,12 @@ class Highlight {
     void release();
     virtual bool isInWord(char c) {return !testWw(c);}
     virtual void doHighlight(int ctxNum, TextLine *textLine);
+    QString iName;
   protected:
     virtual void createItemData(ItemDataList &);
     virtual void init();
     virtual void done();
 
-    QString iName;
     QString dw;
     QString dm;
 //    QString iMimetypes;
