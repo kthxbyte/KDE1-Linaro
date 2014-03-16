@@ -48,8 +48,8 @@ class QTextStream;
 
 class TextEntry
 {
-  friend KJotsMain;
-  friend SubjList;
+  friend class KJotsMain;
+  friend class SubjList;
 public:
   TextEntry() {}
   virtual ~TextEntry() {}
