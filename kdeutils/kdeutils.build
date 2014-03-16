@@ -1,0 +1,13 @@
+#!/bin/sh
+CWD=`pwd`
+TMP=/tmp
+cd $TMP
+echo "Building kdeutils-1.1.2.tar.bz2..."
+tar xyvf $CWD/kdeutils-1.1.2.tar.bz2
+cd kdeutils-1.1.2
+mkdir -p /usr/doc/kdeutils-1.1.2
+cp -a AUTHORS COPYING INSTALL README /usr/doc/kdeutils-1.1.2
+chown -R root.root /usr/doc/kdeutils-1.1.2
+./configure --prefix=/opt/kde i386-slackware-linux
+make
+make install
