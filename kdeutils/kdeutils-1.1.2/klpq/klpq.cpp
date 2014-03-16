@@ -50,7 +50,7 @@ extern "C" {
 #include "klpqspooler.h"
 #include "FirstStart.h"
 
-Klpq::Klpq(const char* name=0) 
+Klpq::Klpq(const char* name /*=0*/) 
   : KTopLevelWidget( name )
 {
   initMetaObject();
