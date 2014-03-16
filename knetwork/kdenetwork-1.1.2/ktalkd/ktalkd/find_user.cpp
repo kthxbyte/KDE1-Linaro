@@ -75,7 +75,7 @@ char *get_display(pid_t pid) {
 
     sprintf(buf, "/proc/%d/environ", pid);
 
-    ifstream ifstr(buf);
+    std::ifstream ifstr(buf);
     if (ifstr.fail()) return 0;
     /* message("reading %s...", fname); */
 

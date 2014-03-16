@@ -33,7 +33,7 @@
  */
 
 #include "answmach.h"
-
+#include <ctime>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

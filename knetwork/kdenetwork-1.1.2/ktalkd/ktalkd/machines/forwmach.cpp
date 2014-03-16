@@ -427,7 +427,7 @@ void sig_handler(int signum)
     fwm->processDelete();
 }
 
-inline void ForwMachine::start(int o_id_num)
+void ForwMachine::start(int o_id_num)
 {
     our_id_num = o_id_num;
     processAnnounce();

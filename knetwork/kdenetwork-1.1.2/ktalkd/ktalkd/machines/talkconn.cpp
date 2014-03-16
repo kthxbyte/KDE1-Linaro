@@ -36,7 +36,7 @@
  * get a socket to talk to. sockt is opened and connected in
  * the progress
  */
-
+#include <cstdlib>
 #include "talkconn.h"
 
 #include <stdio.h>
