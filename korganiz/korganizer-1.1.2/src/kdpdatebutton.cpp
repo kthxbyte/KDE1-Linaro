@@ -173,7 +173,7 @@ void KDateButton::updateConfig()
 
 }
 
-inline QDate KDateButton::date()
+QDate KDateButton::date()
 {
   return bt_Date;
 }
@@ -232,7 +232,7 @@ void KDateButton::setHiliteStyle(int HiliteStyle)
   update();
 }
 
-inline int KDateButton::hiliteStyle()
+int KDateButton::hiliteStyle()
 {
   return currHiliteStyle;
 }

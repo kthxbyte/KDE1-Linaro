@@ -26,8 +26,8 @@ class EventWinGeneral : public WinGeneral
 {
     Q_OBJECT
 
-    friend EventWin;
-    friend EditEventWin;
+    friend class EventWin;
+    friend class EditEventWin;
 
 public:
 

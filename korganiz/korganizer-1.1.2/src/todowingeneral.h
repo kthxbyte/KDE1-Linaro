@@ -26,8 +26,8 @@ class TodoWinGeneral : public WinGeneral
 {
     Q_OBJECT
 
-    friend EventWin;
-    friend TodoEventWin;
+    friend class EventWin;
+    friend class TodoEventWin;
 //    friend EditEventWin;
 
 public:

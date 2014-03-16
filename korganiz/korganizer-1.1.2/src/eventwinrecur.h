@@ -28,9 +28,9 @@ class EventWinRecurrence : public QFrame
 {
     Q_OBJECT
 
-    friend EventWin;
-    friend EditEventWin;
-    friend TodoEventWin;
+    friend class EventWin;
+    friend class EditEventWin;
+    friend class TodoEventWin;
     
 
 public:

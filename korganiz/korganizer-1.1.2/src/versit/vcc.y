@@ -63,7 +63,7 @@ DFARS 252.227-7013 or 48 CFR 52.227-19, as applicable.
 */
 
 #define yyparse mime_parse
-#define yylex mime_lex
+/* #define yylex mime_lex */
 #define yyerror mime_error
 #define yychar mime_char
 /* #define p_yyval p_mime_val */
@@ -1031,7 +1031,7 @@ EndString:
     return lexStr();
     } /* LexQuotedPrintable */
 
-static int yylex() {
+static int mime_lex() {
 
     int lexmode = LEXMODE();
     if (lexmode == L_VALUES) {

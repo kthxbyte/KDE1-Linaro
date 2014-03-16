@@ -85,7 +85,7 @@ KDPEvent::~KDPEvent()
   KDPEvent::eventCount--;
 }
 
-inline void KDPEvent::setOrganizer(const char *o)
+void KDPEvent::setOrganizer(const char *o)
 {
   // we don't check for readonly here, because it is
   // possible that by setting the organizer we are changing
@@ -96,17 +96,17 @@ inline void KDPEvent::setOrganizer(const char *o)
   emit eventUpdated(this);  
 }
 
-inline void KDPEvent::setOrganizer(const QString &o)
+void KDPEvent::setOrganizer(const QString &o)
 {
   setOrganizer(o.data());
 }
 
-inline const QString &KDPEvent::getOrganizer() const
+const QString &KDPEvent::getOrganizer() const
 {
   return organizer;
 }
 
-inline void KDPEvent::addAttendee(Attendee *a)
+void KDPEvent::addAttendee(Attendee *a)
 {
   if (ro) return;
   if (a->name.left(7).upper() == "MAILTO:")
@@ -116,14 +116,14 @@ inline void KDPEvent::addAttendee(Attendee *a)
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::removeAttendee(Attendee *a)
+void KDPEvent::removeAttendee(Attendee *a)
 {
   if (ro) return;
   attendeeList.removeRef(a);
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::removeAttendee(const char *n)
+void KDPEvent::removeAttendee(const char *n)
 {
   Attendee *a;
 
@@ -135,7 +135,7 @@ inline void KDPEvent::removeAttendee(const char *n)
     }
 }
     
-inline void KDPEvent::clearAttendees()
+void KDPEvent::clearAttendees()
 {
   if (ro) return;
   attendeeList.clear();
@@ -154,7 +154,7 @@ Attendee *KDPEvent::getAttendee(const char *n) const
   return 0L;
 }
 
-inline void KDPEvent::setDtStart(const QDateTime &dtStart)
+void KDPEvent::setDtStart(const QDateTime &dtStart)
 {  
   int diffsecs = KDPEvent::dtStart.secsTo(dtStart);
 
@@ -166,7 +166,7 @@ inline void KDPEvent::setDtStart(const QDateTime &dtStart)
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setDtStart(const QString &dtStartStr)
+void KDPEvent::setDtStart(const QString &dtStartStr)
 {
   QDateTime tmpDt(strToDateTime(dtStartStr));
   int diffsecs = KDPEvent::dtStart.secsTo(tmpDt);
@@ -179,12 +179,12 @@ inline void KDPEvent::setDtStart(const QString &dtStartStr)
   emit eventUpdated(this);
 }
 
-inline const QDateTime &KDPEvent::getDtStart() const
+const QDateTime &KDPEvent::getDtStart() const
 {
   return dtStart;
 }
 
-inline QString KDPEvent::getDtStartTimeStr() const
+QString KDPEvent::getDtStartTimeStr() const
 {
   QString timeStr;
 
@@ -194,7 +194,7 @@ inline QString KDPEvent::getDtStartTimeStr() const
 		  
 }
 
-inline QString KDPEvent::getDtStartDateStr() const
+QString KDPEvent::getDtStartDateStr() const
 {
   QString dateStr;
  
@@ -204,26 +204,26 @@ inline QString KDPEvent::getDtStartDateStr() const
   return dateStr;
 }
 
-inline void KDPEvent::setDtEnd(const QDateTime &dtEnd)
+void KDPEvent::setDtEnd(const QDateTime &dtEnd)
 {  
   if (ro) return;
   KDPEvent::dtEnd = dtEnd;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setDtEnd(const QString &dtEndStr)
+void KDPEvent::setDtEnd(const QString &dtEndStr)
 {
   if (ro) return;
   KDPEvent::dtEnd = strToDateTime(dtEndStr);
   emit eventUpdated(this);
 }
 
-inline const QDateTime &KDPEvent::getDtEnd() const
+const QDateTime &KDPEvent::getDtEnd() const
 {
   return dtEnd;
 }
 
-inline QString KDPEvent::getDtEndTimeStr() const
+QString KDPEvent::getDtEndTimeStr() const
 {
   QString timeStr;
 
@@ -233,7 +233,7 @@ inline QString KDPEvent::getDtEndTimeStr() const
 		  
 }
 
-inline QString KDPEvent::getDtEndDateStr() const
+QString KDPEvent::getDtEndDateStr() const
 {
   QString dateStr;
 
@@ -243,52 +243,52 @@ inline QString KDPEvent::getDtEndDateStr() const
   return dateStr;
 }
 
-inline bool KDPEvent::doesFloat() const
+bool KDPEvent::doesFloat() const
 {
   return floats;
 }
 
-inline void KDPEvent::setFloats(bool f)
+void KDPEvent::setFloats(bool f)
 {
   if (ro) return;
   floats = f;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setDescription(const QString &description)
+void KDPEvent::setDescription(const QString &description)
 {
   if (ro) return;
   KDPEvent::description = description;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setDescription(const char *description)
+void KDPEvent::setDescription(const char *description)
 {
   if (ro) return;
   KDPEvent::description = description;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getDescription() const
+const QString &KDPEvent::getDescription() const
 {
   return description;
 }
 
-inline void KDPEvent::setSummary(const QString &summary)
+void KDPEvent::setSummary(const QString &summary)
 {
   if (ro) return;
   KDPEvent::summary = summary.data(); // so it gets detached
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setSummary(const char *summary)
+void KDPEvent::setSummary(const char *summary)
 {
   if (ro) return;
   KDPEvent::summary = summary;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getSummary() const
+const QString &KDPEvent::getSummary() const
 {
   return summary;
 }
@@ -322,14 +322,14 @@ void KDPEvent::setStatus(const QString &statStr)
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setStatus(int status)
+void KDPEvent::setStatus(int status)
 {
   if (ro) return;
   KDPEvent::status = status;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getStatus() const
+int KDPEvent::getStatus() const
 {
   return status;
 }
@@ -394,7 +394,7 @@ void KDPEvent::setSecrecy(int sec)
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getSecrecy() const
+int KDPEvent::getSecrecy() const
 {
   return secrecy;
 }
@@ -416,7 +416,7 @@ QString KDPEvent::getSecrecyStr() const
   return QString("");
 }
 
-inline void KDPEvent::setCategories(const QStrList &categories)
+void KDPEvent::setCategories(const QStrList &categories)
 {
   if (ro) return;
   KDPEvent::categories = categories;
@@ -440,7 +440,7 @@ void KDPEvent::setCategories(const QString &catStr)
   emit eventUpdated(this);
 }
 
-inline const QStrList &KDPEvent::getCategories() const
+const QStrList &KDPEvent::getCategories() const
 {
   return categories;
 }
@@ -461,150 +461,150 @@ QString KDPEvent::getCategoriesStr()
   return temp;
 }
 
-inline void KDPEvent::setAttachments(const QStrList &attachments)
+void KDPEvent::setAttachments(const QStrList &attachments)
 {
   if (ro) return;
   KDPEvent::attachments = attachments;
   emit eventUpdated(this);
 }
 
-inline const QStrList &KDPEvent::getAttachments() const
+const QStrList &KDPEvent::getAttachments() const
 {
   return attachments;
 }
 
-inline void KDPEvent::setResources(const QStrList &resources)
+void KDPEvent::setResources(const QStrList &resources)
 {
   if (ro) return;
   KDPEvent::resources = resources;
   emit eventUpdated(this);
 }
 
-inline const QStrList &KDPEvent::getResources() const
+const QStrList &KDPEvent::getResources() const
 {
   return resources;
 }
 
-inline void KDPEvent::setAudioAlarmFile(const QString &audioAlarmFile)
+void KDPEvent::setAudioAlarmFile(const QString &audioAlarmFile)
 {
   if (ro) return;
   KDPEvent::audioAlarmFile = audioAlarmFile;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setAudioAlarmFile(const char *audioAlarmFile)
+void KDPEvent::setAudioAlarmFile(const char *audioAlarmFile)
 {
   if (ro) return;
   KDPEvent::audioAlarmFile = audioAlarmFile;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getAudioAlarmFile() const
+const QString &KDPEvent::getAudioAlarmFile() const
 {
   return audioAlarmFile;
 }
 
-inline void KDPEvent::setProgramAlarmFile(const QString &programAlarmFile)
+void KDPEvent::setProgramAlarmFile(const QString &programAlarmFile)
 {
   if (ro) return;
   KDPEvent::programAlarmFile = programAlarmFile;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setProgramAlarmFile(const char *programAlarmFile)
+void KDPEvent::setProgramAlarmFile(const char *programAlarmFile)
 {
   if (ro) return;
   KDPEvent::programAlarmFile = programAlarmFile;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getProgramAlarmFile() const
+const QString &KDPEvent::getProgramAlarmFile() const
 {
   return programAlarmFile;
 }
 
-inline void KDPEvent::setMailAlarmAddress(const QString &mailAlarmAddress)
+void KDPEvent::setMailAlarmAddress(const QString &mailAlarmAddress)
 {
   if (ro) return;
   KDPEvent::mailAlarmAddress = mailAlarmAddress;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setMailAlarmAddress(const char *mailAlarmAddress)
+void KDPEvent::setMailAlarmAddress(const char *mailAlarmAddress)
 {
   if (ro) return;
   KDPEvent::mailAlarmAddress = mailAlarmAddress;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getMailAlarmAddress() const
+const QString &KDPEvent::getMailAlarmAddress() const
 {
   return mailAlarmAddress;
 }
 
-inline void KDPEvent::setAlarmText(const QString &alarmText)
+void KDPEvent::setAlarmText(const QString &alarmText)
 {
   if (ro) return;
   KDPEvent::alarmText = alarmText.data(); // so it gets detached
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setAlarmText(const char *alarmText)
+void KDPEvent::setAlarmText(const char *alarmText)
 {
   if (ro) return;
   KDPEvent::alarmText = alarmText;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getAlarmText() const
+const QString &KDPEvent::getAlarmText() const
 {
   return alarmText;
 }
 
-inline void KDPEvent::setAlarmTime(const QDateTime &alarmTime)
+void KDPEvent::setAlarmTime(const QDateTime &alarmTime)
 {
   if (ro) return;
   KDPEvent::alarmTime = alarmTime;
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setAlarmTime(const QString &alarmTimeStr)
+void KDPEvent::setAlarmTime(const QString &alarmTimeStr)
 {
   if (ro) return;
   KDPEvent::alarmTime = strToDateTime(alarmTimeStr);
   emit eventUpdated(this);
 }
 
-inline const QDateTime &KDPEvent::getAlarmTime() const
+const QDateTime &KDPEvent::getAlarmTime() const
 {
   return alarmTime;
 }
 
-inline void KDPEvent::setAlarmSnoozeTime(int alarmSnoozeTime)
+void KDPEvent::setAlarmSnoozeTime(int alarmSnoozeTime)
 {
   if (ro) return;
   KDPEvent::alarmSnoozeTime = alarmSnoozeTime;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getAlarmSnoozeTime() const
+int KDPEvent::getAlarmSnoozeTime() const
 {
   return alarmSnoozeTime;
 }
 
-inline void KDPEvent::setAlarmRepeatCount(int alarmRepeatCount)
+void KDPEvent::setAlarmRepeatCount(int alarmRepeatCount)
 {
   if (ro) return;
   KDPEvent::alarmRepeatCount = alarmRepeatCount;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getAlarmRepeatCount() const
+int KDPEvent::getAlarmRepeatCount() const
 {
   return alarmRepeatCount;
 }
 
-inline void KDPEvent::toggleAlarm()
+void KDPEvent::toggleAlarm()
 {
   if (ro) return;
   if (alarmRepeatCount) {
@@ -622,89 +622,89 @@ inline void KDPEvent::toggleAlarm()
   emit eventUpdated(this);
 }
 
-inline void KDPEvent::setPriority(int priority)
+void KDPEvent::setPriority(int priority)
 {
   if (ro) return;
   KDPEvent::priority = priority;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getPriority() const
+int KDPEvent::getPriority() const
 {
   return priority;
 }
 
-inline void KDPEvent::setTransparency(int transparency)
+void KDPEvent::setTransparency(int transparency)
 {
   if (ro) return;
   KDPEvent::transparency = transparency;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getTransparency() const
+int KDPEvent::getTransparency() const
 {
   return transparency;
 }
 
-inline void KDPEvent::setRelatedTo(int relatedTo)
+void KDPEvent::setRelatedTo(int relatedTo)
 {
   if (ro) return;
   KDPEvent::relatedTo = relatedTo;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getRelatedTo() const
+int KDPEvent::getRelatedTo() const
 {
   return relatedTo;
 }
 
-inline void KDPEvent::setEventId(int id)
+void KDPEvent::setEventId(int id)
 {
   KDPEvent::id = id;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getEventId() const
+int KDPEvent::getEventId() const
 {
   return id;
 }
 
-inline void KDPEvent::setVUID(const char *vUID)
+void KDPEvent::setVUID(const char *vUID)
 {
   KDPEvent::vUID = vUID;
   emit eventUpdated(this);
 }
 
-inline const QString &KDPEvent::getVUID() const
+const QString &KDPEvent::getVUID() const
 {
   return vUID;
 }
 
-inline void KDPEvent::setRevisionNum(int rev)
+void KDPEvent::setRevisionNum(int rev)
 {
   if (ro) return;
   revisionNum = rev;
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getRevisionNum() const
+int KDPEvent::getRevisionNum() const
 {
   return revisionNum;
 }
 
-inline void KDPEvent::setLastModified(const QDateTime &lm)
+void KDPEvent::setLastModified(const QDateTime &lm)
 {
   // DON'T! emit eventUpdated because we call this from
   // CalObject::updateEvent().
   lastModified = lm;
 }
 
-inline const QDateTime &KDPEvent::getLastModified() const
+const QDateTime &KDPEvent::getLastModified() const
 {
   return lastModified;
 }
 
-inline ushort KDPEvent::doesRecur() const
+ushort KDPEvent::doesRecur() const
 {
   return recurs;
 }
@@ -1007,22 +1007,22 @@ void KDPEvent::setRecursDaily(int _rFreq, const QDate &_rEndDate)
   emit eventUpdated(this);
 }
 
-inline int KDPEvent::getRecursFrequency() const
+int KDPEvent::getRecursFrequency() const
 {
   return rFreq;
 }
 
-inline int KDPEvent::getRecursDuration() const
+int KDPEvent::getRecursDuration() const
 {
   return rDuration;
 }
 
-inline const QDate &KDPEvent::getRecursEndDate() const
+const QDate &KDPEvent::getRecursEndDate() const
 {
   return rEndDate;
 }
 
-inline QString KDPEvent::getRecursEndDateStr() const
+QString KDPEvent::getRecursEndDateStr() const
 {
   QString dateStr;
 
@@ -1032,17 +1032,17 @@ inline QString KDPEvent::getRecursEndDateStr() const
   return dateStr;
 }
 
-inline const QBitArray &KDPEvent::getRecursDays() const
+const QBitArray &KDPEvent::getRecursDays() const
 {
   return rDays;
 }
 
-inline const QList<KDPEvent::rMonthPos> &KDPEvent::getRecursMonthPositions() const
+const QList<KDPEvent::rMonthPos> &KDPEvent::getRecursMonthPositions() const
 {
   return rMonthPositions;
 }
 
-inline const QList<int> &KDPEvent::getRecursMonthDays() const
+const QList<int> &KDPEvent::getRecursMonthDays() const
 {
   return rMonthDays;
 }
@@ -1150,7 +1150,7 @@ void KDPEvent::setRecursYearly(int type, int _rFreq, const QDate &_rEndDate)
   emit eventUpdated(this);
 }
 
-inline const QList<int> &KDPEvent::getRecursYearNums() const
+const QList<int> &KDPEvent::getRecursYearNums() const
 {
   return rYearNums;
 }
@@ -1202,7 +1202,7 @@ void KDPEvent::addExDate(const QDate &date)
   emit eventUpdated(this);
 }
 
-inline const QDateList &KDPEvent::getExDates() const
+const QDateList &KDPEvent::getExDates() const
 {
   return exDates;
 }
@@ -1223,26 +1223,26 @@ bool KDPEvent::isException(const QDate &qd) const
   return FALSE;
 }
 
-inline void KDPEvent::setPilotId(int id)
+void KDPEvent::setPilotId(int id)
 {
   if (ro) return;
   pilotId = id;
   //emit eventUpdated(this);
 }
 
-inline int KDPEvent::getPilotId() const
+int KDPEvent::getPilotId() const
 {
   return pilotId;
 }
 
-inline void KDPEvent::setSyncStatus(int stat)
+void KDPEvent::setSyncStatus(int stat)
 {
   if (ro) return;
   syncStatus = stat;
   //  emit eventUpdated(this);
 }
 
-inline int KDPEvent::getSyncStatus() const
+int KDPEvent::getSyncStatus() const
 {
   return syncStatus;
 }

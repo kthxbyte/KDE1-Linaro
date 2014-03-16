@@ -24,14 +24,17 @@ class EventWinDetails : public QFrame
 {
   Q_OBJECT
 
-  friend EventWin;
-  friend EditEventWin;
-  friend TodoEventWin;
+  friend class EventWin;
+  friend class EditEventWin;
+  friend class TodoEventWin;
 
 public:
 
   EventWinDetails(QWidget* parent = 0, const char* name = 0, bool isTodo = FALSE);
   virtual ~EventWinDetails();
+  QPushButton*     categoriesButton;
+  QListT<Attendee> attendeeList;
+  QComboBox*       statusCombo;
 
 public slots:
   virtual void setEnabled(bool);
@@ -72,13 +75,11 @@ protected:
   KTabListBox* attachListBox;
   QPushButton* saveFileAsButton;
   QPushButton* addressBookButton;
-  QPushButton* categoriesButton;
   QLabel* categoriesLabel;
   QLabel* attendeeRoleLabel;
   QComboBox* attendeeRoleCombo;
   QCheckBox* attendeeRSVPButton;
   QLabel* statusLabel;
-  QComboBox* statusCombo;
   QLabel* locationLabel;
   QLabel* priorityLabel;
   QComboBox* priorityCombo;
@@ -87,7 +88,6 @@ protected:
   QLabel* transparencyLabel;
   QLabel* transparencyAmountLabel;
 
-  QList<Attendee> attendeeList; // list of attendees
 
 };
 

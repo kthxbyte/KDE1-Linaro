@@ -26,9 +26,9 @@ class WinGeneral : public QFrame
 {
     Q_OBJECT
 
-    friend EventWin;
-    friend TodoEventWin;
-    friend EditEventWin;
+    friend class EventWin;
+    friend class TodoEventWin;
+    friend class EditEventWin;
 
 public:
 

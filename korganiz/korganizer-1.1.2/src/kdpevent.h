@@ -17,7 +17,7 @@ class KDPEvent;
 
 class Attendee
 {
-  friend KDPEvent;
+  friend class KDPEvent;
 
 public:
   enum { NEEDS_ACTION = 0, ACCEPTED = 1, SENT = 2, TENTATIVE = 3,
@@ -64,7 +64,7 @@ private:
 class KDPEvent : public QObject {
   Q_OBJECT
 
-  friend CalObject;
+  friend class CalObject;
 public:
   /** number of events created */
   static int eventCount;
