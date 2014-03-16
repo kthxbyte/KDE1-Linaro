@@ -1,7 +1,7 @@
-#include <iostream.h>
+#include <iostream>
 
 #include <stdlib.h>
-#include <string.h>
+#include <string>
 #include <qdict.h>
 #include <qobjcoll.h>
 #include <qlist.h>
@@ -10,6 +10,7 @@
 #define MAX_VALUE 65536
 
 #include "gridbag.h"
+using namespace std; 
 
 Rectangle::Rectangle(int xx,int yy,int h,int w)
 {
@@ -88,7 +89,7 @@ GridBagConstraints::GridBagConstraints()
     tempHeight=0;
 }
 
-GridBagConstraints::GridBagConstraints(const GridBagConstraints& c)
+GridBagConstraints::GridBagConstraints(const GridBagConstraints& c) : RELATIVE(-1)
 {
     copy(c);
 }
@@ -177,7 +178,10 @@ GridBagLayout::GridBagLayout(Insets i)
 }
 
 
-GridBagLayout::GridBagLayout()
+GridBagLayout::GridBagLayout() : 
+	MAXGRIDSIZE(128), 
+	MINSIZE(1),
+	PREFERREDSIZE(2)
 {
 //    comptable = new QDict<GridBagConstraints>(100,false);
 //    defaultConstraints = new GridBagConstraints();

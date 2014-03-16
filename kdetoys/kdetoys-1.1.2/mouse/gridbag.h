@@ -2,13 +2,13 @@
 #define __Q_GRIDBAG__
 
 #include <stdlib.h>
-#include <string.h>
+#include <string>
 #include <qdict.h>
 #include <qobjcoll.h>
 #include <qlist.h>
 #include <qwidget.h>
 
-#include <iostream.h>
+#include <iostream>
 
 #define MAX_VALUE 65536
 
@@ -152,7 +152,7 @@ public:
 
 };
 
-ostream& operator<<(ostream& out, GridBagLayoutInfo& i);
+std::ostream& operator<<(std::ostream& out, GridBagLayoutInfo& i);
 
 
 
