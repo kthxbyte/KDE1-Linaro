@@ -15,6 +15,7 @@
 
 /* #define NAMEI_DEBUG */
 
+#include <linux/fs.h>
 #include <linux/ext2_fs.h>
 
 #include "ext2fs.h"

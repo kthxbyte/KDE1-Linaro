@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 
+#include <linux/fs.h>
 #include <linux/ext2_fs.h>
 
 #include "ext2fs.h"

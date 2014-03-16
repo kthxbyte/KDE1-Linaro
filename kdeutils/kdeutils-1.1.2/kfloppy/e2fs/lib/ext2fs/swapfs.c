@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include <linux/fs.h>
 #include <linux/ext2_fs.h>
 
 #include "ext2fs.h"
@@ -91,7 +92,9 @@ void ext2fs_swap_inode(ext2_filsys fs, struct ext2_inode *t,
 		for (i = 0; i < EXT2_N_BLOCKS; i++)
 			t->i_block[i] = f->i_block[i];
 	}
-	t->i_version = ext2fs_swab32(f->i_version);
+	/* FIXME: may take a look at it one day */
+	/* http://marc.info/?l=linux-kernel&m=97817722613236&w=2  */ 
+	/*t->i_version = ext2fs_swab32(f->i_version);*/
 	t->i_file_acl = ext2fs_swab32(f->i_file_acl);
 	t->i_dir_acl = ext2fs_swab32(f->i_dir_acl);
 	t->i_faddr = ext2fs_swab32(f->i_faddr);

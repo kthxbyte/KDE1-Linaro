@@ -8,6 +8,7 @@
  */
 
 #include <stdio.h>
+#include <linux/fs.h>
 #include <linux/ext2_fs.h>
 
 #include "ext2fs.h"

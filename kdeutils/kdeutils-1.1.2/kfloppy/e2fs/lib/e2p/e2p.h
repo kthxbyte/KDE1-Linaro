@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <dirent.h>
 
+#include <linux/fs.h>
 #include <linux/ext2_fs.h>
 
 int fgetflags (const char * name, unsigned long * flags);
