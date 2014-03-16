@@ -1,6 +1,6 @@
 /* (c)1997 Robert Palmbos
    See main.cc for license details */
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -55,7 +55,7 @@ void ZipArch::openArch( QString file )
 	archProcess << "unzip" << "-v" << archname;
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
 
@@ -158,7 +158,7 @@ void ZipArch::extractTo( QString dest )
 	archProcess << archname << "-d" << dest;
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == false)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
   	newProgressDialog( 1, listing->count() );

@@ -3,7 +3,7 @@
 #include <kurl.h>
 // Unsorted in qdir.h is used, but in some of the headers
 // below it's defined, too. So I brought kurl.h to the top.
-#include <iostream.h>
+#include <iostream>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,27 +13,27 @@
 TarArch::TarArch( QString te )
 	: Arch()
 {
-	cout << "Entered TarArch" << endl;
+	std::cout << "Entered TarArch" << endl;
 	listing = new QStrList;
 	compressed = TRUE;
 	onlyupdate = FALSE;
 	storefullpath = FALSE;
 	tmpfile.sprintf( "/tmp/ark.%d/tmpfile.tar", getpid() );
 	tar_exe = te;
-	cout << "Left TarArch" << endl;
+	std::cout << "Left TarArch" << endl;
 }
 
 TarArch::~TarArch()
 {
-	cout << "Entered ~TarArch" << endl;
+	std::cout << "Entered ~TarArch" << endl;
 	updateArch();
 	delete listing;
-	cout << "Left ~TarArch" << endl;
+	std::cout << "Left ~TarArch" << endl;
 }
 
 int TarArch::updateArch()
 {
-	cout << "Entered updateArch" << endl;
+	std::cout << "Entered updateArch" << endl;
 	int retcode = 0;
 	if( !compressed )
 	{
@@ -46,7 +46,7 @@ int TarArch::updateArch()
 		archProcess << getCompressor() << "-c" << tmpfile;
 		if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
 		{
-			cerr << "Subprocess wouldn't start!" << endl;
+			std::cerr << "Subprocess wouldn't start!" << endl;
 			return -1;
 		}
 
@@ -65,14 +65,14 @@ int TarArch::updateArch()
 			openArch( archname );
 		}
 	}
-	cout << "Left updateArch" << endl;
+	std::cout << "Left updateArch" << endl;
 	return retcode;
 }
 
 QString TarArch::getCompressor() 
 {
 	QString extension = archname.right( archname.length()-archname.findRev('.') );
-	cout << extension;
+	std::cout << extension;
 	if( extension == ".tgz" || extension == ".gz" ) 
 		return QString( "gzip" );
 	if( extension == ".bz" )
@@ -89,7 +89,7 @@ QString TarArch::getCompressor()
 QString TarArch::getUnCompressor() 
 {
 	QString extension = archname.right( archname.length()-archname.findRev('.') );
-	cout << extension;
+	std::cout << extension;
 	if( extension == ".tgz" || extension == ".gz" ) 
 		return QString( "gunzip" );
 	if( extension == ".bz" )
@@ -123,7 +123,7 @@ void TarArch::addPath( bool p )
 
 void TarArch::openArch( QString name )
 {
-	cout << "Entered openArch" << endl;
+	std::cout << "Entered openArch" << endl;
 	char line[4096];
 	char columns[5][80];
 	char filename[4096];
@@ -140,7 +140,7 @@ void TarArch::openArch( QString name )
 	
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
 
@@ -166,14 +166,14 @@ void TarArch::openArch( QString name )
 		;
 
 
-	cout << "Left openArch" << endl;
+	std::cout << "Left openArch" << endl;
 }
 
 void TarArch::createArch( QString file )
 {
-	cout << "Entered createArch" << endl;
+	std::cout << "Entered createArch" << endl;
 	archname = file;
-	cout << "Left createArch" << endl;
+	std::cout << "Left createArch" << endl;
 }
 
 const QStrList * TarArch::getListing()
@@ -183,7 +183,7 @@ const QStrList * TarArch::getListing()
 
 void TarArch::createTmp()
 {
-	cout << "Entered createTmp" << endl;
+	std::cout << "Entered createTmp" << endl;
 	if( compressed )
 	{
 		FILE* fd, *fd2;
@@ -195,7 +195,7 @@ void TarArch::createTmp()
 		archProcess << "gunzip" << "-c" << archname;
 		if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
 		{
-			cerr << "Subprocess wouldn't start!" << endl;
+			std::cerr << "Subprocess wouldn't start!" << endl;
 			return;
 		}
 
@@ -210,12 +210,12 @@ void TarArch::createTmp()
 		while(archProcess.isRunning())
 			;
 	}
-	cout << "Left createTmp" << endl;
+	std::cout << "Left createTmp" << endl;
 }
 
 int TarArch::addFile( QStrList* urls )
 {
-	cout << "Entered addFile" << endl;
+	std::cout << "Entered addFile" << endl;
 
 	int retcode;
 	QString file, url, tmp;
@@ -223,9 +223,9 @@ int TarArch::addFile( QStrList* urls )
 	createTmp();
 
 	url = urls->first();
-	cout << "Url's name is: " << url << endl;
+	std::cout << "Url's name is: " << url << endl;
 	KURL::decodeURL(url); // Because of special characters
-	cout << "Url's name now is: " << url << endl;
+	std::cout << "Url's name now is: " << url << endl;
 	file = url.right( url.length()-5 );
 	if( file[file.length()-1]=='/' )
 		file[file.length()-1]='\0';
@@ -253,7 +253,7 @@ int TarArch::addFile( QStrList* urls )
 		int pos;
 		pos = file.findRev( '/', -1, FALSE );
 		base = file.left( ++pos );
-		cout << "base is" << base << endl;
+		std::cout << "base is" << base << endl;
 //		pos++;
 		tmp = file.right( file.length()-pos );
 		file = tmp;
@@ -286,11 +286,11 @@ int TarArch::addFile( QStrList* urls )
 // Debuggin part
  	QStrList segflist	= archProcess.getArguments();
  	for (const char* f = segflist.first(); f; f = segflist.next())
- 		cout << "Argument:" << "'" << f << "'" << endl;
+ 		std::cout << "Argument:" << "'" << f << "'" << endl;
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
- 		cerr << "In addFile" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "In addFile" << endl;
  		return -1;
  	}
 	newProgressDialog( 1, urls->count() );
@@ -303,7 +303,7 @@ int TarArch::addFile( QStrList* urls )
 			break;
 		}
 		fgets( inp, 4096, fd );
-		cerr << inp;
+		std::cerr << inp;
 		setProgress( i );
  	}
 	fclose( fd );
@@ -314,12 +314,12 @@ int TarArch::addFile( QStrList* urls )
 		file.remove( 0, 1 );  // Get rid of leading /
 	retcode = updateArch();
 	return retcode;
-	cout << "Left addFile" << endl;
+	std::cout << "Left addFile" << endl;
 }
 
 void TarArch::extractTo( QString dir )
 {
-	cout << "Entered extractTo" << endl;
+	std::cout << "Entered extractTo" << endl;
 	FILE *fd;
 	char line[4096];
 
@@ -333,7 +333,7 @@ void TarArch::extractTo( QString dir )
 	            <<	"-xvf" << archname << "-C" << dir;	
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == false)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
 	newProgressDialog( 1, listing->count() );
@@ -353,12 +353,12 @@ void TarArch::extractTo( QString dir )
 		;
 
 
-	cout << "Left extractTo" << endl;
+	std::cout << "Left extractTo" << endl;
 }
 
 QString TarArch::unarchFile( int index, QString dest )
 {
-	cout << "Entered unarchFile" << endl;
+	std::cout << "Entered unarchFile" << endl;
 	int pos;
 	QString tmp, name;
 	QString fullname;
@@ -382,13 +382,13 @@ QString TarArch::unarchFile( int index, QString dest )
 	archProcess << archname << "-C" << dest << name;
 	archProcess.start(KProcess::Block);
 	fullname = dest + name;
-	cout << "Left unarchFile" << endl;
+	std::cout << "Left unarchFile" << endl;
 	return fullname;
 }
 
 void TarArch::deleteFile( int indx )
 {
-	cout << "Entered deleteFile" << endl;
+	std::cout << "Entered deleteFile" << endl;
 	QString name, tmp;
 	
 	createTmp();
@@ -401,6 +401,6 @@ void TarArch::deleteFile( int indx )
 	archProcess.start(KProcess::Block);
 	
 	updateArch();
-	cout << "Left deleteFile" << endl;
+	std::cout << "Left deleteFile" << endl;
 }
 

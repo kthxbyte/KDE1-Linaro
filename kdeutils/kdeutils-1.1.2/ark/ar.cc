@@ -1,6 +1,6 @@
 /* (c)1997 Robert Palmbos
 See main.cc for license details */
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -53,7 +53,7 @@ void ArArch::openArch( QString file )
 	archProcess << "vt" << file;
 	if( archProcess.startPipe(KProcess::Stdout, &fd) == FALSE )
 	{
-		cerr << "Subproccess won't start, armageddon is iminent!";
+		std::cerr << "Subproccess won't start, armageddon is iminent!";
 		return;
 	}
 	char *nl;
@@ -134,7 +134,7 @@ int ArArch::addFile( QStrList *urls )
 		archProcess << file;
 		url = urls->next();
 	}while( !url.isNull() );
-	cout << "starting add command";
+	std::cout << "starting add command";
 	archProcess.start( KProcess::Block );
 	listing->clear();
 	openArch( archname );
@@ -160,7 +160,7 @@ void ArArch::extractTo( QString dest )
 
 	if( archProcess.startPipe( KProcess::Stdout, &fd ) == FALSE )
 	{
-		cerr << "Subprocess won't start, perhaps your computer has a virus?";
+		std::cerr << "Subprocess won't start, perhaps your computer has a virus?";
 		return;
 	}
 	newProgressDialog( 1, listing->count() );

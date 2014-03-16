@@ -1,7 +1,7 @@
 /* (c)1997 Robert Palmbos
    See main.cc for license details */
 #include <kurl.h>
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -44,7 +44,7 @@ void LhaArch::addPath( bool in )
 
 void LhaArch::openArch( QString file )
 {
-	cout << "Entered openArch" << endl;
+	std::cout << "Entered openArch" << endl;
 	char line[4096];
 	char columns[8][80];
 	char filename[4096];
@@ -59,7 +59,7 @@ void LhaArch::openArch( QString file )
 	archProcess << "-v" << archname;
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == FALSE)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
 
@@ -94,7 +94,7 @@ void LhaArch::openArch( QString file )
 				filename
 				);
 		}
-		cerr << "The actual file's : '" << filename << "'" << endl;
+		std::cerr << "The actual file's : '" << filename << "'" << endl;
 // Hereby I skip the line if the first field contains 'd', it means directory.
 //		if(!QString::QString(columns[0]).contains('d'))
 //		{
@@ -184,7 +184,7 @@ void LhaArch::extractTo( QString dest )
   	newProgressDialog( 1, listing->count() );
  	if(archProcess.startPipe(KProcess::Stdout, &fd) == false)
  	{
- 		cerr << "Subprocess wouldn't start!" << endl;
+ 		std::cerr << "Subprocess wouldn't start!" << endl;
  		return;
  	}
 	for( long int i=0; !feof(fd); i++)
@@ -222,7 +222,7 @@ QString LhaArch::unarchFile( int pos, QString dest )
 
 void LhaArch::deleteFile( int pos )
 {
-	cout << "Entered deleteFile" << endl;
+	std::cout << "Entered deleteFile" << endl;
 	QString name, tmp;
 
 	archProcess.clearArguments();
@@ -233,6 +233,6 @@ void LhaArch::deleteFile( int pos )
  	archProcess.start(KProcess::Block);
 	listing->clear();
 	openArch( archname );
-	cout << "Left deleteFile" << endl;
+	std::cout << "Left deleteFile" << endl;
 }
 
