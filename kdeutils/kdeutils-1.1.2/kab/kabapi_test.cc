@@ -1,6 +1,6 @@
 #include <qimage.h>
 #include <kabapi.h>
-#include <iostream.h>
+#include <iostream>
 #include <kapp.h>
 #include <kimgio.h>
 
