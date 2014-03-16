@@ -4397,7 +4397,7 @@ else
   echo "configure: failed program was:" >&5
   cat conftest.$ac_ext >&5
   rm -rf conftest*
-  kde_cv_stl_type_sgi=no
+  kde_cv_stl_type_sgi=yes
 fi
 rm -f conftest*
 
